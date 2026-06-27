@@ -100,7 +100,6 @@ Por cada registro se extrae:
 | `unidadFiscalizable` | Unidad fiscalizable |
 | `sector` | Sector (Minería, Energía, etc.) |
 | `nroResolucionApelacion` | Número de resolución de apelación |
-| `fecha` | Fecha del documento |
 | `uuid` | UUID interno del documento |
 | `fileName` | Nombre del archivo PDF descargado |
 

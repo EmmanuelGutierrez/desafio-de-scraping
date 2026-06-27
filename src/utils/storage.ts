@@ -37,7 +37,6 @@ export function saveRows(rows: ResolucionRow[]): void {
     "unidadFiscalizable",
     "sector",
     "nroResolucionApelacion",
-    "fecha",
     "uuid",
     "fileName",
   ];

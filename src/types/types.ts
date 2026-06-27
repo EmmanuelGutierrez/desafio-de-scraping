@@ -35,8 +35,6 @@ export interface ResolucionRow {
   sector: string;
   /** Número de resolución de apelación */
   nroResolucionApelacion: string;
-  /** Fecha (si está disponible) */
-  fecha: string;
   /** UUID del documento extraído del onclick del botón PDF */
   uuid: string | null;
   /** ID del elemento JSF para el trigger de descarga */

@@ -60,7 +60,6 @@ export function parseTableRows(html: string): ResolucionRow[] {
       unidadFiscalizable: cells[3] || "",
       sector: cells[4] || "",
       nroResolucionApelacion: cells[5] || "",
-      fecha: "",
       uuid,
       jsfElementId,
       fileName: "",
