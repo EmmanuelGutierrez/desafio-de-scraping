@@ -4,7 +4,7 @@
  */
 
 import { load, CheerioAPI } from "cheerio";
-import { ResolucionRow } from "./types";
+import { ResolucionRow } from "../types/types";
 import { logger } from "./logger";
 
 /**
@@ -22,7 +22,6 @@ export function parseTableRows(html: string): ResolucionRow[] {
 
   let htmlToParse = html;
   if (!html.includes("<table")) {
-    console.log("html", html);
     htmlToParse = `<table><tbody>${html}</tbody></table>`;
   }
   const $ = load(htmlToParse);
@@ -30,9 +29,7 @@ export function parseTableRows(html: string): ResolucionRow[] {
 
   // Buscar directamente los <tr> ya que el CDATA no incluye <table>
   $("tr[data-ri]").each((_, tr) => {
-    console.log("data-ri", $(tr).attr("data-ri"));
     const rowIndex = parseInt($(tr).attr("data-ri") || "0");
-    console.log("RowIndex", rowIndex);
     const cells: string[] = [];
 
     $(tr)
@@ -73,7 +70,6 @@ export function parseTableRows(html: string): ResolucionRow[] {
 
     rows.push(row);
   });
-  console.log("return rows", rows.length);
   return rows;
 }
 
@@ -174,6 +170,6 @@ function buildFileName(row: ResolucionRow): string {
     .filter(Boolean);
 
   const name = parts.join("_").substring(0, 100) || `documento_${row.rowIndex}`;
-  console.log("name",name)
+
   return `${name}.pdf`;
 }

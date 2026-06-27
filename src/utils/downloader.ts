@@ -7,9 +7,9 @@
 import * as fs from "fs";
 import * as path from "path";
 import { HttpClient, SEARCH_PATH, BASE_URL } from "./http";
-import { ResolucionRow, DownloadResult } from "./types";
+import { ResolucionRow, DownloadResult } from "../types/types";
 import { logger } from "./logger";
-import { isPdf } from "./utils/isPdf";
+import { isPdf } from "./isPdf";
 
 const FORM_ID = "listarDetalleInfraccionRAAForm";
 const PDF_DIR = path.join(process.cwd(), "pdfs");
@@ -54,7 +54,6 @@ export class PdfDownloader {
     // ── Intento 2: Trigger JSF (mojarra) ───────────────────────────────────
     if (row.jsfElementId) {
       const buffer = await this.tryJsfDownload(row);
-      console.log('buffer', buffer);
       if (buffer) {
         fs.writeFileSync(filePath, buffer);
         logger.success(`[download] ✓ JSF: ${row.fileName}`);

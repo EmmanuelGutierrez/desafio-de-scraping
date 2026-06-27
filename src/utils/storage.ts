@@ -5,7 +5,7 @@
 
 import * as fs from "fs";
 import * as path from "path";
-import { ResolucionRow, DownloadResult } from "./types";
+import { ResolucionRow, DownloadResult } from "../types/types";
 import { logger } from "./logger";
 
 const DATA_DIR = path.join(process.cwd(), "data");

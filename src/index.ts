@@ -1,6 +1,6 @@
-import { HttpClient } from "./http";
-import { OefaScraper } from "./scraper";
-import { PdfDownloader } from "./downloader";
+import { HttpClient } from "./utils/http";
+import { OefaScraper } from "./utils/scraper";
+import { PdfDownloader } from "./utils/downloader";
 import {
   saveRows,
   saveFailedDownloads,
@@ -8,9 +8,9 @@ import {
   loadFailedDownloads,
   printSummary,
   ensureDataDir,
-} from "./storage";
-import { logger } from "./logger";
-import { DownloadResult, ResolucionRow } from "./types";
+} from "./utils/storage";
+import { logger } from "./utils/logger";
+import { DownloadResult, ResolucionRow } from "./types/types";
 
 const args = process.argv.slice(2);
 const ONLY_SCRAPE = args.includes("--only-scrape");

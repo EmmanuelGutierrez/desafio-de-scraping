@@ -4,7 +4,7 @@
  */
 
 import axios, { AxiosInstance, AxiosResponse } from "axios";
-import { isPdf } from "./utils/isPdf";
+import { isPdf } from "./isPdf";
 
 const BASE_URL = "https://publico.oefa.gob.pe";
 const SEARCH_PATH = "/repdig/consulta/consultaTfa.xhtml";
@@ -108,10 +108,6 @@ export class HttpClient {
     );
 
     const buffer = Buffer.from(response.data);
-    // Debug temporal
-    console.log("Content-Type response:", response.headers["content-type"]);
-    console.log("Buffer size:", buffer.length);
-    console.log("Primeros bytes:", buffer.toString("utf-8").substring(0, 500));
     return isPdf(buffer) ? buffer : null;
   }
 

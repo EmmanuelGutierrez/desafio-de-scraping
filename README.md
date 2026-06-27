@@ -66,13 +66,16 @@ npm start -- --retry-failed
 oefa-scraper/
 ├── src/
 │   ├── index.ts        # Punto de entrada y orquestador
-│   ├── http.ts         # Cliente HTTP con sesión JSF y reintentos
-│   ├── scraper.ts      # Lógica de búsqueda y paginación
-│   ├── parser.ts       # Parsing de HTML (tabla + paginación)
-│   ├── downloader.ts   # Descarga de PDFs
-│   ├── storage.ts      # Guardado en JSON/CSV
-│   ├── logger.ts       # Sistema de logging
-│   └── types.ts        # Tipos e interfaces
+│   ├── types/
+│   │   └── types.ts    # Tipos e interfaces
+│   └── utils/
+│       ├── http.ts         # Cliente HTTP con sesión JSF y reintentos
+│       ├── scraper.ts      # Lógica de búsqueda y paginación
+│       ├── parser.ts       # Parsing de HTML (tabla + paginación)
+│       ├── downloader.ts   # Descarga de PDFs
+│       ├── storage.ts      # Guardado en JSON/CSV
+│       ├── logger.ts       # Sistema de logging
+│       └── isPdf.ts        # Validación de firmas PDF (magic numbers)
 ├── pdfs/               # PDFs descargados (generado automáticamente)
 ├── data/               # Datos extraídos JSON/CSV (generado automáticamente)
 │   ├── resoluciones.json

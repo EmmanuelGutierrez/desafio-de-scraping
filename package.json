@@ -5,9 +5,9 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "start": "ts-node ./index.ts",
+    "start": "ts-node ./src/index.ts",
     "start:prod": "npm run build && node dist/index.ts",
-    "dev": "ts-node ./index.ts"
+    "dev": "ts-node ./src/index.ts"
   },
   "dependencies": {
     "axios": "^1.7.0",

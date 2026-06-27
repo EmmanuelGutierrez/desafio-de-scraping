@@ -5,7 +5,7 @@
 
 import { HttpClient, SEARCH_PATH } from "./http";
 import { parseTableRows, parsePagination } from "./parser";
-import { SearchFilters, ResolucionRow } from "./types";
+import { SearchFilters, ResolucionRow } from "../types/types";
 import { logger } from "./logger";
 
 /** Nombre del formulario principal (inferido del onclick de los botones) */
